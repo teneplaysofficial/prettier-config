@@ -1,0 +1,48 @@
+{
+  "name": "@tenedev/prettier-config",
+  "version": "0.0.0",
+  "description": "✨ Dynamic shared Prettier configuration with automatic optional plugin detection.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teneplaysofficial/prettier-config.git"
+  },
+  "keywords": [
+    "prettier",
+    "prettier-config",
+    "shared-config",
+    "code-formatting",
+    "formatting",
+    "developer-tools"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "main": "index.js",
+  "packageManager": "pnpm@10.29.3",
+  "peerDependencies": {
+    "prettier": "3.x"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.1",
+    "prettier-plugin-packagejson": "^3.0.0",
+    "release-hub": "1.0.0-beta.1"
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "release": "bash release.sh",
+    "fmt": "prettier --write .",
+    "fmt:check": "prettier --check ."
+  }
+}
