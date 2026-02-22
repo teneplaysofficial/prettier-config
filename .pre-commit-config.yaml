@@ -3,6 +3,6 @@ repos:
     hooks:
       - id: prettier
         name: prettier
-        entry: npx -y prettier --write --ignore-unknown
+        entry: pnpm exec prettier --write --ignore-unknown
         language: system
         types: [text]
