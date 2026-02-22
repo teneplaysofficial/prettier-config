@@ -1,6 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "allowedCommands": ["pnpm install", "pnpm run fmt"],
-  "postUpgradeTasks": { "commands": ["pnpm install", "pnpm run fmt"] },
   "extends": ["local>teneplaysofficial/renovate-config"]
 }
