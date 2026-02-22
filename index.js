@@ -16,10 +16,13 @@ const OPTIONAL_PLUGINS = [
  */
 function resolveIfExists(packageName) {
   try {
-    require.resolve(packageName);
-    return packageName;
+    return require.resolve(packageName, { paths: [process.cwd()] });
   } catch {
-    return null;
+    try {
+      return require.resolve(packageName);
+    } catch {
+      return null;
+    }
   }
 }
 
