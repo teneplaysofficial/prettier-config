@@ -6,6 +6,10 @@ settings:
 
 importers:
   .:
+    dependencies:
+      sort-package-keys:
+        specifier: ^2.0.0
+        version: 2.0.0
     devDependencies:
       '@tenedev/prettier-config':
         specifier: ^1.0.0
@@ -660,6 +664,12 @@ packages:
     engines: { node: '>=20' }
     hasBin: true
 
+  sort-package-keys@2.0.0:
+    resolution:
+      {
+        integrity: sha512-LD6yRNs9S5Z9D5+cBLYyfM/ZJfnJYp8UzGA8k/IWCOKCr9hEcGtPnESL6Esms5UnVRbkmZtqU942IT2ezNa0Yg==,
+      }
+
   source-map@0.6.1:
     resolution:
       {
@@ -1106,6 +1116,8 @@ snapshots:
       semver: 7.7.4
       sort-object-keys: 2.1.0
       tinyglobby: 0.2.15
+
+  sort-package-keys@2.0.0: {}
 
   source-map@0.6.1: {}
 
