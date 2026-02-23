@@ -5,11 +5,7 @@ const { PACKAGE_KEY_ORDER } = require('sort-package-keys');
 /**
  * @type {readonly string[]}
  */
-const OPTIONAL_PLUGINS = [
-  'prettier-plugin-tailwindcss',
-  'prettier-plugin-sh',
-  'prettier-plugin-packagejson',
-];
+const OPTIONAL_PLUGINS = ['prettier-plugin-tailwindcss', 'prettier-plugin-sh'];
 
 /**
  * @param {string} packageName
@@ -56,7 +52,7 @@ const config = {
   htmlWhitespaceSensitivity: 'css',
   useTabs: false,
   packageSortOrder: PACKAGE_KEY_ORDER,
-  plugins: getInstalledPlugins(),
+  plugins: ['prettier-plugin-packagejson', ...getInstalledPlugins()],
 };
 
 module.exports = config;

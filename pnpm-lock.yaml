@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      prettier-plugin-packagejson:
+        specifier: ^3.0.0
+        version: 3.0.0(prettier@3.8.1)
       sort-package-keys:
         specifier: ^2.0.0
         version: 2.0.0
@@ -23,9 +26,6 @@ importers:
       prettier:
         specifier: ^3.8.1
         version: 3.8.1
-      prettier-plugin-packagejson:
-        specifier: ^3.0.0
-        version: 3.0.0(prettier@3.8.1)
       release-hub:
         specifier: 1.0.0-beta.1
         version: 1.0.0-beta.1

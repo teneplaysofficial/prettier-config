@@ -5,6 +5,4 @@ repos:
       - id: prettier
         additional_dependencies:
           - prettier@3
-          - sort-package-keys@2
-          - prettier-plugin-packagejson@3
           - '@tenedev/prettier-config@1'
