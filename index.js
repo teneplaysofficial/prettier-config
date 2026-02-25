@@ -2,39 +2,42 @@
 
 const { PACKAGE_KEY_ORDER } = require('sort-package-keys');
 
-/**
- * @type {readonly string[]}
- */
+/** @type {readonly string[]} */
+const CORE_PLUGINS = ['prettier-plugin-packagejson'];
+
+/** @type {readonly string[]} */
 const OPTIONAL_PLUGINS = ['prettier-plugin-tailwindcss', 'prettier-plugin-sh'];
 
 /**
- * @param {string} packageName
+ * Resolve plugin from consumer project first, fallback to this config package.
  *
- * @returns {string | null}
+ * @param {string} packageName
+ * @returns {string}
  */
-function resolveIfExists(packageName) {
+function resolvePlugin(packageName) {
   try {
     return require.resolve(packageName, { paths: [process.cwd()] });
   } catch {
-    try {
-      return require.resolve(packageName);
-    } catch {
-      return null;
-    }
+    return require.resolve(packageName, { paths: [__dirname] });
   }
 }
 
 /**
- *  @returns {string[]}
+ * Resolve optional plugin safely.
+ *
+ * @param {string} packageName
+ * @returns {string | null}
  */
-function getInstalledPlugins() {
-  return OPTIONAL_PLUGINS.map(resolveIfExists).filter(Boolean);
+function resolveOptional(packageName) {
+  try {
+    return resolvePlugin(packageName);
+  } catch {
+    return null;
+  }
 }
 
-/**
- * @type {import("prettier").Config}
- */
-const config = {
+/** @type {import('prettier').Config} */
+module.exports = {
   semi: true,
   singleQuote: true,
   trailingComma: 'all',
@@ -52,7 +55,8 @@ const config = {
   htmlWhitespaceSensitivity: 'css',
   useTabs: false,
   packageSortOrder: PACKAGE_KEY_ORDER,
-  plugins: ['prettier-plugin-packagejson', ...getInstalledPlugins()],
+  plugins: [
+    ...CORE_PLUGINS.map(resolvePlugin),
+    ...OPTIONAL_PLUGINS.map(resolveOptional).filter(Boolean),
+  ],
 };
-
-module.exports = config;

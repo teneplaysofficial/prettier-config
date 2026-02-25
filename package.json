@@ -1,6 +1,6 @@
 {
   "name": "@tenedev/prettier-config",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "✨ Dynamic shared Prettier configuration with automatic optional plugin detection.",
   "keywords": [
     "prettier",
@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@tenedev/prettier-config": "^1.0.0",
+    "@types/node": "^25.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
