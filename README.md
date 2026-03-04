@@ -29,6 +29,10 @@ This config automatically loads plugins if they exist in your project.
 
 Currently supported:
 
-- `prettier-plugin-tailwindcss`
-- `prettier-plugin-sh`
-- `prettier-plugin-packagejson`
+- [@prettier/plugin-php](https://github.com/prettier/plugin-php)
+- [@prettier/plugin-pug](https://github.com/prettier/plugin-pug)
+- [@prettier/plugin-ruby](https://github.com/prettier/plugin-ruby)
+- [@prettier/plugin-xml](https://github.com/prettier/plugin-xml)
+- [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
+- [prettier-plugin-sh](https://github.com/un-ts/prettier/tree/master/packages/sh)
+- [prettier-plugin-packagejson](https://github.com/matzkoh/prettier-plugin-packagejson) (default)

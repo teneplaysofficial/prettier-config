@@ -6,7 +6,14 @@ const { PACKAGE_KEY_ORDER } = require('sort-package-keys');
 const CORE_PLUGINS = ['prettier-plugin-packagejson'];
 
 /** @type {readonly string[]} */
-const OPTIONAL_PLUGINS = ['prettier-plugin-tailwindcss', 'prettier-plugin-sh'];
+const OPTIONAL_PLUGINS = [
+  '@prettier/plugin-php',
+  '@prettier/plugin-pug',
+  '@prettier/plugin-ruby',
+  '@prettier/plugin-xml',
+  'prettier-plugin-tailwindcss',
+  'prettier-plugin-sh',
+];
 
 /**
  * Resolve plugin from consumer project first, fallback to this config package.
