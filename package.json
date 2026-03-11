@@ -19,13 +19,13 @@
     "url": "https://github.com/sponsors/teneplaysofficial"
   },
   "license": "Apache-2.0",
-  "files": [
-    "index.js"
-  ],
   "publishConfig": {
     "access": "public"
   },
   "packageManager": "pnpm@10.31.0",
+  "files": [
+    "index.js"
+  ],
   "main": "index.js",
   "engines": {
     "node": ">=14"
@@ -36,12 +36,12 @@
     "prepare": "husky",
     "release": "bash release.sh"
   },
-  "peerDependencies": {
-    "prettier": "3.x"
-  },
   "dependencies": {
     "prettier-plugin-packagejson": "^3.0.0",
     "sort-package-keys": "^2.0.0"
+  },
+  "peerDependencies": {
+    "prettier": "3.x"
   },
   "devDependencies": {
     "@tenedev/prettier-config": "^1.0.0",
